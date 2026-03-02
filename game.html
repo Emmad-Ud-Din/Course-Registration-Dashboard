@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insect Hunt - EduPlatform</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #26a69a;
+        }
+
+        .game-area {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .insect {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            z-index: 1;
+            font-size: 3em;
+        }
+
+        .insect:hover {
+            transform: scale(1.1);
+        }
+
+        .insect img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .game-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .game-message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #26a69a;
+        }
+
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .insect {
+            animation: float 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">EduPlatform</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <!--Game-->
+    <div class="container">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Insect Hunt: Catch the Buzz</h2>
+                <p>Catch 5 bugs within 30 seconds to win!</p>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="bugsCaught">0</div>
+                    <div>Bugs Caught</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="timer">30</div>
+                    <div>Seconds Left</div>
+                </div>
+            </div>
+
+            <div class="game-message" id="gameMessage"></div>
+
+            <div class="game-area" id="gameArea">
+                <!-- Insects will be generated dynamically -->
+                <div class="game-over" id="gameOver">
+                    <h3 id="gameOverMessage"></h3>
+                    <button class="btn waves-effect waves-light" id="playAgainBtn">
+                        <i class="material-icons left">refresh</i>Play Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button class="btn waves-effect waves-light" id="startBtn">
+                    <i class="material-icons left">play_arrow</i>Start Game
+                </button>
+                <button class="btn waves-effect waves-light red" id="endBtn" style="margin-left: 10px;">
+                    <i class="material-icons left">stop</i>End Game
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EduPlatform</h5>
+                    <p class="grey-text text-lighten-4">Empowering learners worldwide with quality education.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="courses.html">Courses</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 EduPlatform
+            </div>
+        </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize Materialize components
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+
+            const gameState = {
+                bugsCaught: 0,
+                timeLeft: 30,
+                gameActive: false,
+                timerInterval: null,
+                bugInterval: null,
+                level: 1,
+                spawnInterval: 1000,
+                bugs: [
+                    { icon: '🐞', name: 'Ladybug' },
+                    { icon: '🦗', name: 'Cricket' },
+                    { icon: '🦋', name: 'Butterfly' },
+                    { icon: '🐝', name: 'Bee' },
+                    { icon: '🪲', name: 'Beetle' }
+                ]
+            };
+
+            function startGame() {
+                gameState.bugsCaught = 0;
+                gameState.timeLeft = 30 - ((gameState.level - 1) * 5); // Reduce time by 5s per level
+                gameState.gameActive = true;
+                gameState.spawnInterval = Math.max(800, 1000 - ((gameState.level - 1) * 100)); // Reduce spawn time by 100ms per level, minimum 800ms
+                updateStats();
+                
+                // Clear any existing intervals
+                clearInterval(gameState.timerInterval);
+                clearInterval(gameState.bugInterval);
+                
+                // Start timer
+                gameState.timerInterval = setInterval(updateTimer, 1000);
+                
+                // Start spawning bugs
+                gameState.bugInterval = setInterval(spawnBug, gameState.spawnInterval);
+                
+                // Hide game over message
+                $('#gameOver').hide();
+                $('#gameMessage').text(`Level ${gameState.level} - Catch the bugs!`);
+                
+                // Disable start button
+                $('#startBtn').prop('disabled', true);
+            }
+
+            function updateTimer() {
+                gameState.timeLeft--;
+                updateStats();
+                
+                if (gameState.timeLeft <= 0) {
+                    endGame(false);
+                }
+            }
+
+            function updateStats() {
+                $('#bugsCaught').text(gameState.bugsCaught);
+                $('#timer').text(gameState.timeLeft);
+            }
+
+            function spawnBug() {
+                if (!gameState.gameActive) return;
+                
+                const gameArea = $('#gameArea');
+                const bug = gameState.bugs[Math.floor(Math.random() * gameState.bugs.length)];
+                
+                const bugElement = $('<div>')
+                    .addClass('insect')
+                    .html(bug.icon)
+                    .css({
+                        left: Math.random() * (gameArea.width() - 60) + 'px',
+                        top: Math.random() * (gameArea.height() - 60) + 'px'
+                    });
+                
+                gameArea.append(bugElement);
+                
+                // Remove bug after 2 seconds
+                setTimeout(() => {
+                    bugElement.remove();
+                }, 2000);
+                
+                // Add click handler
+                bugElement.click(function() {
+                    if (!gameState.gameActive) return;
+                    
+                    $(this).remove();
+                    gameState.bugsCaught++;
+                    updateStats();
+                    
+                    if (gameState.bugsCaught >= 5) {
+                        endGame(true);
+                    }
+                });
+            }
+
+            function endGame(won) {
+                gameState.gameActive = false;
+                clearInterval(gameState.timerInterval);
+                clearInterval(gameState.bugInterval);
+                
+                // Remove all remaining bugs
+                $('.insect').remove();
+                
+                // Show game over message
+                const gameOver = $('#gameOver');
+                let message;
+                if (won) {
+                    gameState.level++;
+                    message = `Level ${gameState.level - 1} Complete! Get ready for Level ${gameState.level}!`;
+                } else {
+                    message = 'Time\'s up! Try again!';
+                }
+                $('#gameOverMessage').text(message);
+                gameOver.show();
+                
+                // Enable start button
+                $('#startBtn').prop('disabled', false);
+            }
+
+            // Event listeners
+            $('#startBtn').click(startGame);
+            $('#playAgainBtn').click(startGame);
+            $('#endBtn').click(function() {
+                if (gameState.gameActive) {
+                    gameState.level = 1; // Reset level to 1
+                    endGame(false);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

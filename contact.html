@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduPlatform</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header i {
+            font-size: 48px;
+            color: #26a69a;
+        }
+
+        .input-field input:focus + label,
+        .input-field textarea:focus + label {
+            color: #26a69a !important;
+        }
+
+        .input-field input:focus,
+        .input-field textarea:focus {
+            border-bottom: 1px solid #26a69a !important;
+            box-shadow: 0 1px 0 0 #26a69a !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">EduPlatform</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <!-- Contact Form -->
+    <div class="container">
+        <div class="contact-form">
+            <div class="form-header">
+                <i class="material-icons">contact_mail</i>
+                <h4>Contact Us</h4>
+                <p>Have questions? We'd love to hear from you.</p>
+            </div>
+            <form id="contactForm" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">person</i>
+                        <input id="name" type="text" class="validate" required>
+                        <label for="name">Name</label>
+                        <span class="helper-text" data-error="Please enter your name"></span>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="Please enter a valid email"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">subject</i>
+                        <input id="subject" type="text" class="validate" required>
+                        <label for="subject">Subject</label>
+                        <span class="helper-text" data-error="Please enter a subject"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">message</i>
+                        <textarea id="message" class="materialize-textarea validate" required></textarea>
+                        <label for="message">Message</label>
+                        <span class="helper-text" data-error="Please enter your message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color: #26a69a;">
+                            Send Message
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info center-align">
+            <div class="row">
+                <div class="col s12 m4">
+                    <i class="material-icons large">location_on</i>
+                    <h5>Address</h5>
+                    <p>123 Education Street<br>Learning City, LC 12345</p>
+                </div>
+                <div class="col s12 m4">
+                    <i class="material-icons large">phone</i>
+                    <h5>Phone</h5>
+                    <p>+90 (525) 332-4267</p>
+                </div>
+                <div class="col s12 m4">
+                    <i class="material-icons large">email</i>
+                    <h5>Email</h5>
+                    <p>contact@eduplatform.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EduPlatform</h5>
+                    <p class="grey-text text-lighten-4">Empowering learners worldwide with quality education.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="courses.html">Courses</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 EduPlatform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize Materialize components
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        // Form handling with jQuery
+        $(document).ready(function () {
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault();
+
+                // Get form data
+                var formData = {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    subject: $('#subject').val(),
+                    message: $('#message').val()
+                };
+
+                // Show success message
+                M.toast({ html: 'Message sent successfully!', classes: 'green' });
+
+                // Reset form
+                this.reset();
+                M.updateTextFields();
+            });
+        });
+    </script>
+</body>
+
+</html>

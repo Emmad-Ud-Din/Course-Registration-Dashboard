@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - EduPlatform</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Embedded styles for courses page */
+        .course-filter {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .course-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card .card-content {
+            flex-grow: 1;
+        }
+
+        .course-card .card-action {
+            border-top: 1px solid rgba(160, 160, 160, 0.2);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .course-badge.beginner {
+            background-color: #4caf50;
+        }
+
+        .course-badge.intermediate {
+            background-color: #2196f3;
+        }
+
+        .course-badge.advanced {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">EduPlatform</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <!-- Course Filter Section -->
+    <div class="container">
+        <div class="course-filter">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="input-field">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="searchCourse" class="validate">
+                        <label for="searchCourse">Search Courses</label>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="input-field">
+                        <select id="categoryFilter">
+                            <option value="" selected>All Categories</option>
+                            <option value="web">Web Development</option>
+                            <option value="data">Data Science</option>
+                            <option value="mobile">Mobile Development</option>
+                        </select>
+                        <label>Category</label>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="input-field">
+                        <select id="levelFilter">
+                            <option value="" selected>All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                        <label>Level</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row" id="coursesGrid">
+            <!-- Course 1 -->
+            <div class="col s12 m6 l4">
+                <div class="card course-card" data-category="web">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img src="images/course1.jpg" alt="Web Development">
+                        <span class="course-badge beginner">Beginner</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Web Development<i
+                                class="material-icons right">more_vert</i></span>
+                        <p>Learn modern web development with HTML, CSS, and JavaScript.</p>
+                        <div class="course-meta">
+                            <p><i class="material-icons tiny">schedule</i> 8 weeks</p>
+                            <p><i class="material-icons tiny">people</i> 1,234 students</p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect waves-light btn" style="background-color: #26a69a;">Enroll Now</a>
+                        <a href="#" class="right">$49.99</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Course Details<i
+                                class="material-icons right">close</i></span>
+                        <p>This comprehensive course covers everything you need to know about web development, from
+                            basic HTML to advanced JavaScript concepts.</p>
+                        <ul>
+                            <li>HTML5 & CSS3 Fundamentals</li>
+                            <li>JavaScript ES6+</li>
+                            <li>Responsive Design</li>
+                            <li>Web APIs & AJAX</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col s12 m6 l4">
+                <div class="card course-card" data-category="data">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img src="images/course2.jpg" alt="Data Science">
+                        <span class="course-badge intermediate">Intermediate</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Data Science<i
+                                class="material-icons right">more_vert</i></span>
+                        <p>Master data analysis and machine learning techniques.</p>
+                        <div class="course-meta">
+                            <p><i class="material-icons tiny">schedule</i> 12 weeks</p>
+                            <p><i class="material-icons tiny">people</i> 2,345 students</p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect waves-light btn" style="background-color: #2196f3;">Enroll Now</a>
+                        <a href="#" class="right">$69.99</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Course Details<i
+                                class="material-icons right">close</i></span>
+                        <p>Learn the fundamentals of data science, including statistical analysis, machine learning, and
+                            data visualization.</p>
+                        <ul>
+                            <li>Python for Data Science</li>
+                            <li>Statistical Analysis</li>
+                            <li>Machine Learning Basics</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col s12 m6 l4">
+                <div class="card course-card" data-category="mobile">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img src="images/course3.jpg" alt="Mobile Development">
+                        <span class="course-badge advanced">Advanced</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Mobile Development<i
+                                class="material-icons right">more_vert</i></span>
+                        <p>Build native mobile applications for iOS and Android.</p>
+                        <div class="course-meta">
+                            <p><i class="material-icons tiny">schedule</i> 10 weeks</p>
+                            <p><i class="material-icons tiny">people</i> 1,567 students</p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect waves-light btn" style="background-color: #f44336;">Enroll Now</a>
+                        <a href="#" class="right">$89.99</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Course Details<i
+                                class="material-icons right">close</i></span>
+                        <p>Learn to develop professional mobile applications using React Native and modern development
+                            practices.</p>
+                        <ul>
+                            <li>React Native Fundamentals</li>
+                            <li>Mobile UI/UX Design</li>
+                            <li>State Management</li>
+                            <li>Native Features Integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EduPlatform</h5>
+                    <p class="grey-text text-lighten-4">Empowering learners worldwide with quality education.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="courses.html">Courses</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 EduPlatform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize Materialize components
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+            M.FormSelect.init(document.querySelectorAll('select'));
+
+            // Course filtering functionality
+            $('#searchCourse, #categoryFilter, #levelFilter').on('change keyup', function () {
+                const searchTerm = $('#searchCourse').val().toLowerCase();
+                const category = $('#categoryFilter').val();
+                const level = $('#levelFilter').val();
+
+                $('.course-card').each(function () {
+                    const card = $(this);
+                    const title = card.find('.card-title').text().toLowerCase();
+                    const badge = card.find('.course-badge').text().toLowerCase();
+
+                    const matchesSearch = title.includes(searchTerm);
+                    const matchesCategory = !category || card.data('category') === category;
+                    const matchesLevel = !level || badge.includes(level);
+
+                    if (matchesSearch && matchesCategory && matchesLevel) {
+                        card.parent().show();
+                    } else {
+                        card.parent().hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

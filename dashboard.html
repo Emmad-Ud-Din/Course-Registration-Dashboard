@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - EduPlatform</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Embedded styles for dashboard page */
+        .dashboard-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/dashboard-bg.jpg');
+            background-size: cover;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .progress-card {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #26a69a;
+            transition: width 0.3s ease;
+        }
+
+        .activity-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .calendar-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">EduPlatform</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <div class="container">
+            <h1>Welcome, John Doe</h1>
+            <p class="flow-text">Track your progress and continue learning</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Course Progress -->
+            <div class="col s12 m8">
+                <div class="section">
+                    <h4>Your Courses</h4>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card progress-card">
+                                <div class="card-content">
+                                    <span class="card-title">Web Development</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <p>75% Complete</p>
+                                    <p>Next: JavaScript ES6+ Module</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" class="disabled">Continue Learning</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <div class="card progress-card">
+                                <div class="card-content">
+                                    <span class="card-title">Data Science</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 30%"></div>
+                                    </div>
+                                    <p>30% Complete</p>
+                                    <p>Next: Statistical Analysis</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" class="disabled">Continue Learning</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="section">
+                    <h4>Recent Activity</h4>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="activity-item">
+                                <p><i class="material-icons tiny">play_circle</i> Completed "HTML Basics" lesson</p>
+                                <small class="grey-text">2 hours ago</small>
+                            </div>
+                            <div class="activity-item">
+                                <p><i class="material-icons tiny">assignment</i> Submitted "CSS Layout" assignment</p>
+                                <small class="grey-text">1 day ago</small>
+                            </div>
+                            <div class="activity-item">
+                                <p><i class="material-icons tiny">forum</i> Posted in "Web Development" discussion</p>
+                                <small class="grey-text">2 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col s12 m4">
+                <!-- Calendar -->
+                <div class="section">
+                    <h4>Schedule</h4>
+                    <div class="calendar-container">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Deadlines -->
+                <div class="section">
+                    <h4>Upcoming Deadlines</h4>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="activity-item">
+                                <p>JavaScript Project</p>
+                                <small class="grey-text">Due in 3 days</small>
+                            </div>
+                            <div class="activity-item">
+                                <p>Data Analysis Quiz</p>
+                                <small class="grey-text">Due in 5 days</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="section">
+                    <h4>Your Stats</h4>
+                    <div class="card">
+                        <div class="card-content">
+                            <p><i class="material-icons tiny">school</i> Courses Enrolled: 3</p>
+                            <p><i class="material-icons tiny">assignment_turned_in</i> Assignments Completed: 12</p>
+                            <p><i class="material-icons tiny">stars</i> Certificates Earned: 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EduPlatform</h5>
+                    <p class="grey-text text-lighten-4">Empowering learners worldwide with quality education.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="courses.html">Courses</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 EduPlatform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize Materialize components
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+
+            // Initialize calendar
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth'
+                },
+                events: [
+                    {
+                        title: 'Web Development Class',
+                        start: '2024-03-15T10:00:00',
+                        end: '2024-03-15T12:00:00'
+                    },
+                    {
+                        title: 'Data Science Workshop',
+                        start: '2024-03-17T14:00:00',
+                        end: '2024-03-17T16:00:00'
+                    }
+                ]
+            });
+            calendar.render();
+        });
+
+        // Animate progress bars
+        $(document).ready(function () {
+            $('.progress-fill').each(function () {
+                const width = $(this).css('width');
+                $(this).css('width', '0');
+                setTimeout(() => {
+                    $(this).css('width', width);
+                }, 200);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EduPlatform</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Embedded styles for about page */
+        .about-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about-bg.jpg');
+            background-size: cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .mission-section {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .stats-section {
+            padding: 40px 0;
+            background-color: #26a69a;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">EduPlatform</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <!-- About Header -->
+    <div class="about-header">
+        <div class="container">
+            <h1>About EduPlatform</h1>
+            <p class="flow-text">Empowering learners worldwide with quality education</p>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="mission-section">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h2>Our Mission</h2>
+                    <p>At EduPlatform, we believe that education should be accessible to everyone. Our mission is to
+                        provide high-quality, affordable education to learners worldwide through innovative technology
+                        and expert instruction.</p>
+                    <p>We strive to create an engaging learning environment that helps students achieve their goals and
+                        advance their careers.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h2>Our Vision</h2>
+                    <p>We envision a world where quality education is accessible to all, regardless of geographical
+                        location or financial constraints. Through our platform, we aim to:</p>
+                    <ul class="browser-default">
+                        <li>Provide comprehensive, industry-relevant courses</li>
+                        <li>Foster a global community of learners</li>
+                        <li>Support career growth and development</li>
+                        <li>Promote lifelong learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m3">
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Courses</div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="container">
+        <div class="section">
+            <h2 class="center-align">Our Team</h2>
+            <div class="row">
+                <div class="col s12 m3">
+                    <div class="team-member">
+                        <h5>Ahmet Ercanli</h5>  
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="team-member">
+                        <h5>Burak Giray  </h5>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="team-member">
+                        <h5>Mehmet Kaan</h5>
+                    </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="team-member">
+                            <h5>Mirza Emmad</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EduPlatform</h5>
+                    <p class="grey-text text-lighten-4">Empowering learners worldwide with quality education.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="courses.html">Courses</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 EduPlatform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
