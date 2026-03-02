@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EduPlatform - Educational Platform
 
 A modern educational platform built with HTML, CSS, and JavaScript, featuring Materialize CSS framework.
@@ -98,3 +99,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Materialize CSS for the UI framework
 - FullCalendar.js for the calendar functionality
 - jQuery for DOM manipulation and animations 
+=======
+# Course-Registration-Dashboard
+>>>>>>> 0f13baf36cae928ad30c2297406d2cfb3ff5f37b
